@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ PRIMARY SEO ═══ -->
+<title>AWS・GCPのクラウド料金を最大11%削減 | CloudCost（クラウドコスト合同会社）</title>
+<meta name="description" content="AWSやGoogle Cloudの請求をCloudCostに切り替えるだけで最大11%割引。管理者権限不要・不要サービスのバンドルなし。神奈川県認定・香港Materia Logic子会社。無料お見積り受付中。">
+<meta name="keywords" content="AWS コスト削減, GCP 料金削減, クラウド費用削減, AWS 割引, Google Cloud 割引, クラウド請求代行, Azure 安くする, クラウド最適化, AWS Organizations, クラウドコスト">
+<link rel="canonical" href="https://cloudcost.biz/">
+
+<!-- ═══ OGP / SOCIAL ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cloudcost.biz/">
+<meta property="og:title" content="AWS・GCPのクラウド料金を最大11%削減 | CloudCost">
+<meta property="og:description" content="支払先を変更するだけでAWS・GCP・Azureの利用料が最大11%割引。管理者権限不要。無料見積り受付中。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AWS・GCPのクラウド料金を最大11%割引 | CloudCost">
+<meta name="twitter:description" content="支払先を変更するだけでAWS・GCP・Azureの利用料が最大11%割引。管理者権限不要。無料見積り受付中。">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="クラウドコスト合同会社">
+
+<!-- ═══ SCHEMA.ORG — helps Google rich results AND LLM context ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cloudcost.biz/#org",
+      "name": "クラウドコスト合同会社",
+      "alternateName": "CloudCost LLC",
+      "url": "https://cloudcost.biz/",
+      "description": "AWS・Google Cloud・Azureなどのクラウド料金をリセール割引および最適化によって削減するサービス。支払先変更だけで最大11%割引。",
+      "address": {"@type":"PostalAddress","addressLocality":"横浜市西区","addressRegion":"神奈川県","addressCountry":"JP"},
+      "foundingDate": "2023-01-04",
+      "founder": {"@type":"Person","name":"工藤 弥主子"},
+      "contactPoint": {"@type":"ContactPoint","contactType":"customer support","url":"https://cloudcost.biz/contact","availableLanguage":["Japanese","English"]}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"AWSの料金はどれくらい割引されますか？","acceptedAnswer":{"@type":"Answer","text":"支払先をCloudCostに変更するだけで、サービス料込みで3〜11%の割引が受けられます。他クラウドへの移行では5〜20%、データ最適化を組み合わせると最大50%以上の削減も可能です。"}},
+        {"@type":"Question","name":"管理者権限やルート権限を渡す必要がありますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ、不要です。管理者権限・ルート権限をお渡しいただかなくても割引が適用されます。"}},
+        {"@type":"Question","name":"AWS Organizationsを使っている場合は利用できますか？","acceptedAnswer":{"@type":"Answer","text":"AWS Organizationsを利用中の場合、支払先変更プランは現状ご利用いただけません。詳しくはお問い合わせください。"}},
+        {"@type":"Question","name":"デポジットはいつ返金されますか？","acceptedAnswer":{"@type":"Answer","text":"サービス解約後、速やかにご返金いたします。"}},
+        {"@type":"Question","name":"Google CloudやAzureの料金も削減できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。AWS以外にもGoogle Cloud（GCP）・Azure・Alibaba Cloud・Huawei Cloudなど主要クラウドに対応しています。"}}
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "クラウドコスト削減サービス",
+      "provider": {"@id":"https://cloudcost.biz/#org"},
+      "serviceType": "Cloud Cost Optimization",
+      "description": "AWS・GCP・AzureなどのクラウドをCloudCost経由で利用することで最大11%の割引を実現。請求代行・コスト最適化・移行支援も提供。",
+      "areaServed": ["JP","HK","SG","US","GB"],
+      "offers": {"@type":"Offer","priceCurrency":"JPY","description":"サービス料無料。お支払いは割引後のクラウド利用料のみ。"}
+    }
+  ]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --sky:#1aaee5; --sky-dark:#0d8fc0; --sky-light:#e8f7fd;
+    --navy:#1a2e4a; --orange:#f26522; --yellow:#f5c518;
+    --gray-light:#f4f8fb; --gray:#6b7a8d;
+    --radius:12px;
+    --shadow:0 4px 24px rgba(26,46,74,.10);
+    --shadow-lg:0 12px 48px rgba(26,46,74,.15);
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Noto Sans JP',sans-serif;color:var(--navy);background:#fff;line-height:1.7;font-size:15px;overflow-x:hidden;}
+
+  /* ── HEADER ── */
+  header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:2px solid var(--sky-light);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px;transition:box-shadow .3s;}
+  header.scrolled{box-shadow:0 4px 20px rgba(26,46,74,.1);}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-icon{width:38px;height:38px;background:var(--sky);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+  .logo-text{font-family:'Montserrat',sans-serif;font-weight:900;font-size:20px;color:var(--navy);}
+  .logo-sub{font-size:10px;color:var(--sky);font-weight:600;display:block;line-height:1.2;}
+  nav a{text-decoration:none;color:var(--navy);font-weight:500;font-size:13px;margin-left:28px;transition:color .2s;position:relative;}
+  nav a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--sky);transform:scaleX(0);transition:transform .2s;}
+  nav a:hover::after{transform:scaleX(1);}
+  nav a:hover{color:var(--sky);}
+  .btn-nav{background:var(--sky);color:#fff!important;padding:8px 20px;border-radius:6px;font-weight:700!important;transition:background .2s,transform .15s;}
+  .btn-nav::after{display:none!important;}
+  .btn-nav:hover{background:var(--sky-dark)!important;transform:translateY(-1px);}
+
+  /* ── HERO ── */
+  .hero{background:linear-gradient(135deg,#1aaee5 0%,#0d6eb5 55%,#1a2e4a 100%);padding:88px 5vw 96px;position:relative;overflow:hidden;color:#fff;}
+  .hero-blob{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);animation:blobFloat 8s ease-in-out infinite;}
+  .hero-blob.b1{width:520px;height:520px;top:-120px;right:-80px;animation-delay:0s;}
+  .hero-blob.b2{width:340px;height:340px;bottom:-80px;left:-60px;animation-delay:-3s;}
+  .hero-blob.b3{width:200px;height:200px;top:40%;right:20%;animation-delay:-5s;}
+  @keyframes blobFloat{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-24px) scale(1.04);}}
+  .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1;text-align:center;}
+  .hero-inner>*{opacity:0;transform:translateY(28px);animation:heroIn .7s cubic-bezier(.22,.68,0,1.2) forwards;}
+  .hero-inner>*:nth-child(1){animation-delay:.05s;}
+  .hero-inner>*:nth-child(2){animation-delay:.18s;}
+  .hero-inner>*:nth-child(3){animation-delay:.30s;}
+  .hero-inner>*:nth-child(4){animation-delay:.40s;}
+  .hero-inner>*:nth-child(5){animation-delay:.50s;}
+  .hero-inner>*:nth-child(6){animation-delay:.60s;}
+  @keyframes heroIn{to{opacity:1;transform:translateY(0);}}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:6px 18px;font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:24px;backdrop-filter:blur(4px);}
+  .hero-badge .hl{color:var(--yellow);}
+  .hero h1{font-weight:900;font-size:clamp(2rem,5vw,3.6rem);line-height:1.22;margin-bottom:18px;}
+  .hero h1 em{font-style:normal;color:var(--yellow);}
+  .hero .lead{font-size:16px;color:rgba(255,255,255,.85);max-width:640px;margin:0 auto 14px;}
+  .hero-partners{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:32px;}
+  .hero-discount{display:inline-flex;align-items:baseline;gap:6px;background:var(--yellow);color:var(--navy);border-radius:100px;padding:10px 36px;margin-bottom:40px;font-weight:900;box-shadow:0 8px 28px rgba(245,197,24,.35);animation:pulse 3s ease-in-out infinite;animation-delay:.8s;}
+  @keyframes pulse{0%,100%{box-shadow:0 8px 28px rgba(245,197,24,.35);}50%{box-shadow:0 8px 44px rgba(245,197,24,.65);}}
+  .hero-discount .big{font-family:'Montserrat',sans-serif;font-size:2.8rem;}
+  .hero-discount .lbl{font-size:14px;font-weight:700;}
+  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{background:var(--orange);color:#fff;padding:14px 36px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 20px rgba(242,101,34,.45);transition:transform .15s,box-shadow .15s;}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(242,101,34,.5);}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;padding:14px 36px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(4px);transition:background .2s;}
+  .btn-ghost:hover{background:rgba(255,255,255,.22);}
+
+  /* ── LOGO CAROUSEL ── */
+  .carousel-wrap{background:var(--navy);padding:22px 0;overflow:hidden;position:relative;}
+  .carousel-wrap::before,.carousel-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;}
+  .carousel-wrap::before{left:0;background:linear-gradient(to right,var(--navy),transparent);}
+  .carousel-wrap::after{right:0;background:linear-gradient(to left,var(--navy),transparent);}
+  .carousel-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:14px;}
+  .carousel-track{display:flex;width:max-content;animation:marquee 30s linear infinite;}
+  .carousel-track:hover{animation-play-state:paused;}
+  @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .client-logo{display:inline-flex;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:9px 24px;margin:0 8px;font-weight:700;font-size:13px;color:rgba(255,255,255,.75);white-space:nowrap;transition:background .2s,color .2s;}
+  .client-logo:hover{background:rgba(26,174,229,.25);color:#fff;}
+
+  /* ── COUNTERS ── */
+  .counter-section{background:var(--sky);padding:48px 5vw;}
+  .counter-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+  @media(max-width:640px){.counter-grid{grid-template-columns:repeat(2,1fr);}}
+  .counter-item{color:#fff;}
+  .counter-num{font-family:'Montserrat',sans-serif;font-size:2.8rem;font-weight:900;line-height:1;margin-bottom:6px;}
+  .counter-label{font-size:12px;font-weight:600;opacity:.8;letter-spacing:.5px;}
+
+  /* ── SCROLL REVEAL ── */
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .65s ease,transform .65s cubic-bezier(.22,.68,0,1.1);}
+  .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .65s ease,transform .65s cubic-bezier(.22,.68,0,1.1);}
+  .reveal-right{opacity:0;transform:translateX(40px);transition:opacity .65s ease,transform .65s cubic-bezier(.22,.68,0,1.1);}
+  .reveal.visible,.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translate(0);}
+  .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}.d5{transition-delay:.5s;}
+
+  /* ── SECTION COMMON ── */
+  section{padding:72px 5vw;}
+  .section-inner{max-width:1000px;margin:0 auto;}
+  .section-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sky);margin-bottom:8px;}
+  .section-title{font-weight:900;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--navy);line-height:1.3;margin-bottom:10px;}
+  .section-sub{color:var(--gray);font-size:14.5px;max-width:580px;margin-bottom:8px;}
+  .divider{width:48px;height:4px;background:var(--sky);border-radius:2px;margin:12px 0 40px;}
+
+  /* ── VALUE CARDS ── */
+  .value-section{background:var(--gray-light);}
+  .value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:18px;margin-top:16px;}
+  .value-card{background:#fff;border-radius:var(--radius);padding:28px 18px 22px;text-align:center;box-shadow:var(--shadow);border-top:4px solid var(--sky);transition:transform .22s,box-shadow .22s;}
+  .value-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+  .value-icon{font-size:2rem;margin-bottom:12px;}
+  .value-card h3{font-weight:700;font-size:13px;color:var(--navy);line-height:1.5;}
+
+  /* ── REASONS ── */
+  .reason-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media(max-width:680px){.reason-grid{grid-template-columns:1fr;}}
+  .reason-card{background:var(--sky-light);border-radius:var(--radius);padding:30px 26px;border-left:5px solid var(--sky);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+  .reason-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+  .reason-num{font-family:'Montserrat',sans-serif;font-size:3.5rem;font-weight:900;color:var(--sky);opacity:.15;position:absolute;top:12px;right:20px;line-height:1;}
+  .reason-card h3{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:10px;}
+  .reason-card p{font-size:13.5px;color:var(--gray);line-height:1.8;}
+
+  /* ── STRENGTHS ── */
+  .strength-section{background:var(--navy);}
+  .strength-section .section-title{color:#fff;}
+  .strength-section .section-label{color:var(--yellow);}
+  .strength-section .divider{background:var(--yellow);}
+  .strength-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:700px){.strength-grid{grid-template-columns:1fr;}}
+  .strength-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:var(--radius);padding:26px 20px;color:#fff;transition:background .2s,transform .2s;}
+  .strength-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px);}
+  .strength-icon{font-size:1.7rem;margin-bottom:12px;}
+  .strength-card h3{font-weight:700;font-size:14px;margin-bottom:8px;}
+  .strength-card p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;}
+
+  /* ── CAUTIONS ── */
+  .caution-section{background:var(--sky-light);}
+  .caution-list{display:flex;flex-direction:column;gap:14px;}
+  .caution-item{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);border-left:4px solid var(--orange);transition:transform .2s;}
+  .caution-item:hover{transform:translateX(4px);}
+  .caution-icon{font-size:1.5rem;flex-shrink:0;margin-top:2px;}
+  .caution-item h4{font-weight:700;font-size:14px;margin-bottom:4px;}
+  .caution-item p{font-size:13px;color:var(--gray);line-height:1.8;}
+
+  /* ── FLOW ── */
+  .flow-steps{display:flex;flex-direction:column;position:relative;}
+  .flow-steps::before{content:'';position:absolute;left:27px;top:28px;bottom:28px;width:2px;background:linear-gradient(to bottom,var(--sky),var(--sky-dark));}
+  .flow-step{display:flex;gap:22px;align-items:flex-start;padding:18px 0;}
+  .step-num{width:56px;height:56px;min-width:56px;background:var(--sky);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.2rem;box-shadow:0 4px 14px rgba(26,174,229,.35);position:relative;z-index:1;transition:transform .2s,box-shadow .2s;}
+  .flow-step:hover .step-num{transform:scale(1.12);box-shadow:0 6px 22px rgba(26,174,229,.55);}
+  .step-content{padding-top:10px;}
+  .step-content h4{font-weight:700;font-size:15px;margin-bottom:4px;}
+  .step-content p{font-size:13px;color:var(--gray);line-height:1.7;}
+
+  /* ── PARTNERS ── */
+  .partners-section{background:var(--gray-light);}
+  .partner-logos{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+  .partner-chip{background:#fff;border-radius:8px;padding:10px 22px;font-weight:700;font-size:13px;box-shadow:var(--shadow);border:1px solid #e2eaf2;transition:border-color .2s,color .2s;}
+  .partner-chip:hover,.partner-chip.featured{border-color:var(--sky);color:var(--sky);}
+
+  /* ── FAQ ── */
+  .faq-section{background:var(--gray-light);}
+  .faq-list{display:flex;flex-direction:column;gap:12px;}
+  .faq-item{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+  .faq-q{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;font-weight:700;font-size:14px;user-select:none;transition:background .2s;}
+  .faq-q:hover{background:var(--sky-light);}
+  .faq-q-icon{width:26px;height:26px;min-width:26px;background:var(--sky);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;}
+  .faq-toggle{margin-left:auto;font-size:20px;color:var(--sky);transition:transform .25s;}
+  .faq-item.open .faq-toggle{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.22,.68,0,1.1),padding .3s;padding:0 22px 0 62px;font-size:13.5px;color:var(--gray);line-height:1.8;}
+  .faq-item.open .faq-a{max-height:300px;padding-bottom:18px;}
+
+  /* ── CTA ── */
+  .cta-section{background:linear-gradient(135deg,#1aaee5 0%,#0d5fa8 100%);text-align:center;color:#fff;position:relative;overflow:hidden;}
+  .cta-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
+  .cta-section .section-title{color:#fff;}
+  .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px;}
+  .btn-white{background:#fff;color:var(--sky);padding:14px 36px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;gap:8px;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .15s,box-shadow .15s;}
+  .btn-white:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.2);}
+  .cta-note{font-size:13px;color:rgba(255,255,255,.65);margin-top:14px;}
+
+  /* ── FOOTER ── */
+  footer{background:var(--navy);color:rgba(255,255,255,.5);padding:44px 5vw 30px;font-size:12.5px;text-align:center;}
+  .footer-logo{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;}
+  .footer-logo span{color:#fff;font-weight:700;font-size:15px;}
+  .footer-links{display:flex;gap:20px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+  footer a{color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+  footer a:hover{color:var(--sky);}
+
+  @media(max-width:600px){
+    header nav{display:none;}
+    .hero h1{font-size:1.8rem;}
+    .hero-btns{flex-direction:column;align-items:center;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="site-header">
+  <a href="https://cloudcost.biz/" class="logo">
+    <div class="logo-icon">☁️</div>
+    <div>
+      <span class="logo-text">CloudCost</span>
+      <span class="logo-sub">クラウドを安く、簡単に</span>
+    </div>
+  </a>
+  <nav>
+    <a href="#reasons">削減の仕組み</a>
+    <a href="#flow">ご利用の流れ</a>
+    <a href="#faq">よくある質問</a>
+    <a href="#contact" class="btn-nav">無料見積り →</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      🏅 <span class="hl">神奈川県「セレクト神奈川 NEXT」認定企業</span>
+    </div>
+    <h1>AWS・GCP・Azureの料金を<br><em>最大 11% 削減</em>できます</h1>
+    <p class="lead">支払先をCloudCostに変更するだけ。管理者権限の提供不要・不要サービスのバンドルなし。グローバル専門家チームがコスト最適化をサポートします。</p>
+    <p class="hero-partners">対応クラウド：AWS / Azure / Google Cloud / Alibaba Cloud / Huawei Cloud / Tencent Cloud 他</p>
+    <div class="hero-discount">
+      <span class="lbl">最大</span>
+      <span class="big">11%</span>
+      <span class="lbl">OFF（サービス料込み）</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">📋 無料でお見積りを依頼する</a>
+      <a href="#flow" class="btn-ghost">ご利用の流れを見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO CAROUSEL — immediately after hero -->
+<div class="carousel-wrap">
+  <p class="carousel-label">導入実績（一部）※ Materia Logic社含む</p>
+  <div class="carousel-track">
+    <span class="client-logo">🔴 京セラ (KYOCERA)</span>
+    <span class="client-logo">📈 Kaizen Platform</span>
+    <span class="client-logo">🔷 Anycrew</span>
+    <span class="client-logo">🔵 SORA</span>
+    <span class="client-logo">🌸 MerryBiz</span>
+    <span class="client-logo">🦜 はばたーく Talk</span>
+    <span class="client-logo">⚡ Acro Holdings</span>
+    <span class="client-logo">🌐 Second Life</span>
+    <span class="client-logo">🦓 Zebra Technologies</span>
+    <span class="client-logo">🌿 ACRO-SPERA</span>
+    <span class="client-logo">💎 DIVIC</span>
+    <span class="client-logo">🎮 Girl Gamer Esports</span>
+    <span class="client-logo">🌏 Global Technology Miyazaki</span>
+    <span class="client-logo">◼ ARC</span>
+    <span class="client-logo">🔮 NodeReal</span>
+    <!-- duplicate for seamless loop -->
+    <span class="client-logo">🔴 京セラ (KYOCERA)</span>
+    <span class="client-logo">📈 Kaizen Platform</span>
+    <span class="client-logo">🔷 Anycrew</span>
+    <span class="client-logo">🔵 SORA</span>
+    <span class="client-logo">🌸 MerryBiz</span>
+    <span class="client-logo">🦜 はばたーく Talk</span>
+    <span class="client-logo">⚡ Acro Holdings</span>
+    <span class="client-logo">🌐 Second Life</span>
+    <span class="client-logo">🦓 Zebra Technologies</span>
+    <span class="client-logo">🌿 ACRO-SPERA</span>
+    <span class="client-logo">💎 DIVIC</span>
+    <span class="client-logo">🎮 Girl Gamer Esports</span>
+    <span class="client-logo">🌏 Global Technology Miyazaki</span>
+    <span class="client-logo">◼ ARC</span>
+    <span class="client-logo">🔮 NodeReal</span>
+  </div>
+</div>
+
+<!-- ANIMATED COUNTERS -->
+<section class="counter-section">
+  <div class="counter-grid">
+    <div class="counter-item reveal">
+      <div class="counter-num" data-target="11" data-suffix="%">0%</div>
+      <div class="counter-label">最大割引率（サービス料込み）</div>
+    </div>
+    <div class="counter-item reveal d1">
+      <div class="counter-num" data-target="5" data-suffix="カ国+">0</div>
+      <div class="counter-label">グローバル展開拠点</div>
+    </div>
+    <div class="counter-item reveal d2">
+      <div class="counter-num" data-target="15" data-suffix="社+">0</div>
+      <div class="counter-label">導入企業数</div>
+    </div>
+    <div class="counter-item reveal d3">
+      <div class="counter-num" data-target="50" data-suffix="%">0%</div>
+      <div class="counter-label">最適化による最大追加削減</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROPS -->
+<section class="value-section">
+  <div class="section-inner">
+    <p class="section-label reveal">CloudCost でできること</p>
+    <h2 class="section-title reveal">クラウドをもっとお得に、<br>もっとシンプルに</h2>
+    <div class="divider reveal"></div>
+    <div class="value-grid">
+      <article class="value-card reveal d1"><div class="value-icon">💰</div><h3>最大 11% 割引<br>（サービス料込み）</h3></article>
+      <article class="value-card reveal d2"><div class="value-icon">🔄</div><h3>他ベンダー移行で<br>最大 20% 割引</h3></article>
+      <article class="value-card reveal d3"><div class="value-icon">📊</div><h3>データ消費の分析・<br>最適化でさらに削減</h3></article>
+      <article class="value-card reveal d4"><div class="value-icon">🔒</div><h3>管理者権限の<br>提供不要</h3></article>
+      <article class="value-card reveal d5"><div class="value-icon">🌏</div><h3>5カ国以上の<br>グローバル対応</h3></article>
+      <article class="value-card reveal d5"><div class="value-icon">🤝</div><h3>不要サービスとの<br>バンドルなし</h3></article>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHEAPER -->
+<section id="reasons">
+  <div class="section-inner">
+    <p class="section-label reveal">コスト削減の仕組み</p>
+    <h2 class="section-title reveal">なぜAWSやGCPを安くできるのか？</h2>
+    <p class="section-sub reveal">CloudCostがAWS・GCP・Azureの料金を削減できる理由をわかりやすくご説明します。</p>
+    <div class="divider reveal"></div>
+    <div class="reason-grid">
+      <article class="reason-card reveal-left">
+        <span class="reason-num">01</span>
+        <h3>海外市場の競争原理を活用</h3>
+        <p>日本ではAWSが圧倒的シェアを誇り値下げ不要ですが、香港など海外では激しい競合にさらされています。内容は同一なので、海外価格でご提供が可能です。</p>
+      </article>
+      <article class="reason-card reveal-right">
+        <span class="reason-num">02</span>
+        <h3>大量購入による割引を還元</h3>
+        <p>大量にまとめてベンダーと契約することで仕入れコストを削減し、その割引をそのままお客様へ還元します。クラウドコンピューティングの「コストコ」モデルです。</p>
+      </article>
+      <article class="reason-card reveal-left d1">
+        <span class="reason-num">03</span>
+        <h3>他クラウドベンダーへの移行支援</h3>
+        <p>現行クラウドから他のプロバイダーへ移行することで、サービス料込みで5〜20%の追加割引が見込めます。グローバル専門家チームが移行全体をフルサポートします。</p>
+      </article>
+      <article class="reason-card reveal-right d1">
+        <span class="reason-num">04</span>
+        <h3>クラウド消費データの分析・最適化</h3>
+        <p>インフラ構成およびCDN利用状況を分析・最適化することで、割引後のコストからさらに最大50%削減が可能です。無駄なリソースを可視化し継続的に改善します。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="strength-section">
+  <div class="section-inner">
+    <p class="section-label reveal">他社との違い</p>
+    <h2 class="section-title reveal">CloudCost の強み</h2>
+    <div class="divider reveal"></div>
+    <div class="strength-grid">
+      <article class="strength-card reveal d1"><div class="strength-icon">🏆</div><h3>業界最大の割引率（最大〜10%）</h3><p>海外から仕入れているため、国内の一般的な代理店では実現できない高い割引率を提供します。</p></article>
+      <article class="strength-card reveal d2"><div class="strength-icon">🔐</div><h3>管理者権限の提供不要</h3><p>ルート権限・管理者権限をお渡しいただかなくても割引が適用されます。安全にご利用いただけます。</p></article>
+      <article class="strength-card reveal d3"><div class="strength-icon">🚫</div><h3>不要サービスのバンドルなし</h3><p>必要なサービスだけをシンプルに提供。不要なオプションの押し付けは一切行いません。</p></article>
+      <article class="strength-card reveal d1"><div class="strength-icon">🌐</div><h3>5カ国以上でグローバル展開</h3><p>日本・香港をはじめ5カ国以上でサービスを展開。グローバルな専門家チームが対応します。</p></article>
+      <article class="strength-card reveal d2"><div class="strength-icon">☁️</div><h3>全主要クラウドベンダーに対応</h3><p>AWS・Azure・GCPはもちろん、Alibaba Cloud・Huawei Cloud・Cloudflareなど幅広く対応。</p></article>
+      <article class="strength-card reveal d3"><div class="strength-icon">🏅</div><h3>公認・認定企業</h3><p>神奈川県「セレクト神奈川 NEXT」認定企業。AWSとの直接パートナーシップも締結済み。</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- CAUTIONS -->
+<section class="caution-section">
+  <div class="section-inner">
+    <p class="section-label reveal">ご利用前に</p>
+    <h2 class="section-title reveal">注意点（支払先変更プラン）</h2>
+    <div class="divider reveal"></div>
+    <div class="caution-list">
+      <article class="caution-item reveal">
+        <div class="caution-icon">⚠️</div>
+        <div>
+          <h4>AWS「組織」（Organizations）機能は利用不可になります</h4>
+          <p>AWS Organizationsを使ってリソースを整理・管理している場合は、本サービスをご利用いただけません。詳しくはお問い合わせください。</p>
+        </div>
+      </article>
+      <article class="caution-item reveal d1">
+        <div class="caution-icon">💳</div>
+        <div>
+          <h4>1〜2ヶ月分のデポジットが必要です</h4>
+          <p>CloudCost社がAWS費用を先払いするため、事業継続のためのデポジットをお願いしています。サービス解約後は速やかに全額返金いたします。</p>
+        </div>
+      </article>
+      <article class="caution-item reveal d2">
+        <div class="caution-icon">🔁</div>
+        <div>
+          <h4>支払いサイクルが変わります</h4>
+          <p><strong>1ヶ月デポジットの場合：</strong>月初5日までに請求書発行 → 1週間以内にお支払い<br>
+          <strong>2ヶ月デポジットの場合：</strong>月初5日までに請求書発行 → 月末までにお支払い</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="section-inner">
+    <p class="section-label reveal">ご利用開始まで</p>
+    <h2 class="section-title reveal">ご利用の流れ</h2>
+    <p class="section-sub reveal">最短1週間でAWSのクラウドコスト削減を開始できます。</p>
+    <div class="divider reveal"></div>
+    <div class="flow-steps">
+      <div class="flow-step reveal"><div class="step-num">1</div><div class="step-content"><h4>請求書をお送りください</h4><p>直近のAWS請求書をご共有ください。現在お使いのクラウドや割引状況もお知らせください。</p></div></div>
+      <div class="flow-step reveal d1"><div class="step-num">2</div><div class="step-content"><h4>ご提案・お見積りを作成</h4><p>請求書をもとに具体的なコスト削減のご提案とお見積りを作成してお届けします。</p></div></div>
+      <div class="flow-step reveal d2"><div class="step-num">3</div><div class="step-content"><h4>必要情報のご入力</h4><p>提案内容にご納得いただけましたら、契約・手続きに必要な情報をフォームにてご記入いただきます。</p></div></div>
+      <div class="flow-step reveal d3"><div class="step-num">4</div><div class="step-content"><h4>ご契約（電子署名）</h4><p>Cloudsign経由で契約書をお送りします。電子捺印をお願いします。</p></div></div>
+      <div class="flow-step reveal d4"><div class="step-num">5</div><div class="step-content"><h4>デポジットのお支払い</h4><p>契約締結後、デポジット分の請求書をお送りします。直近請求書の2ヶ月分が目安となります。</p></div></div>
+      <div class="flow-step reveal d5"><div class="step-num">6</div><div class="step-content"><h4>AWS組織へ招待・割引開始！</h4><p>デポジット入金確認後、AWS組織へ招待します。招待を承諾いただくと割引が自動的に開始されます。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-section">
+  <div class="section-inner">
+    <p class="section-label reveal">パートナーシップ</p>
+    <h2 class="section-title reveal">すべての主要クラウドと提携</h2>
+    <div class="divider reveal"></div>
+    <div class="partner-logos">
+      <div class="partner-chip featured reveal">AWS（直接パートナー）</div>
+      <div class="partner-chip reveal d1">Microsoft Azure</div>
+      <div class="partner-chip reveal d2">Google Cloud</div>
+      <div class="partner-chip reveal d3">Alibaba Cloud</div>
+      <div class="partner-chip reveal d4">Huawei Cloud</div>
+      <div class="partner-chip reveal d5">Tencent Cloud</div>
+      <div class="partner-chip reveal d1">MongoDB</div>
+      <div class="partner-chip reveal d2">Cloudflare</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="section-inner">
+    <p class="section-label reveal">よくある質問</p>
+    <h2 class="section-title reveal">FAQ</h2>
+    <div class="divider reveal"></div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-icon">Q</div>AWSやGCPの料金はどれくらい割引されますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">支払先変更プランでは3〜11%（サービス料込み）の割引が可能です。他クラウドへの移行では5〜20%、データ最適化を組み合わせると最大50%以上の削減実績もあります。詳細はお見積りにてご提案します。</div>
+      </div>
+      <div class="faq-item reveal d1">
+        <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-icon">Q</div>管理者権限を渡す必要はありますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">いいえ、不要です。管理者権限・ルート権限をお渡しいただかなくても割引が適用されます。お客様の環境のセキュリティは完全に保たれます。</div>
+      </div>
+      <div class="faq-item reveal d2">
+        <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-icon">Q</div>AWS Organizationsを使っている場合はどうなりますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">AWSの「組織」機能（Organizations）を利用してリソースを管理している場合、現状の支払先変更プランはご利用いただけません。他の削減手段についてはお問い合わせください。</div>
+      </div>
+      <div class="faq-item reveal d3">
+        <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-icon">Q</div>デポジットはいつ返金されますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">サービス解約後、速やかに全額返金いたします。デポジットはCloudCost社がAWS費用を先払いするための担保であり、お客様への追加費用ではありません。</div>
+      </div>
+      <div class="faq-item reveal d4">
+        <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-icon">Q</div>Google CloudやAzureの料金も削減できますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">はい。AWS以外にもGoogle Cloud（GCP）・Azure・Alibaba Cloud・Huawei Cloudなど主要クラウドすべてに対応しています。グローバルな専門家チームが最適なプランをご提案します。</div>
+      </div>
+      <div class="faq-item reveal d5">
+        <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-icon">Q</div>最低利用期間はありますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">特に定めておりません。まずはお気軽に無料お見積りをご依頼ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta-section">
+  <div class="section-inner" style="position:relative;z-index:1;">
+    <p class="section-label reveal" style="color:rgba(255,255,255,.7)">まずはここから</p>
+    <h2 class="section-title reveal">AWSやGCPの請求書を送るだけで<br>具体的な削減額がわかります</h2>
+    <p class="reveal" style="color:rgba(255,255,255,.75);font-size:14.5px;max-width:520px;margin:12px auto 0;">直近のクラウド請求書をご共有いただくと、コスト削減のご提案とお見積りを無料で作成します。</p>
+    <div class="cta-btns">
+      <a href="https://cloudcost.biz/contact" class="btn-white reveal" target="_blank" rel="noopener">📋 無料でお見積りを依頼する</a>
+    </div>
+    <p class="cta-note reveal">🌐 <a href="https://cloudcost.biz/" style="color:rgba(255,255,255,.75);text-decoration:underline;" target="_blank">cloudcost.biz</a>　|　<a href="https://www.youtube.com/watch?v=6Azna8bjwgU" style="color:rgba(255,255,255,.75);text-decoration:underline;" target="_blank">YouTube解説動画</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><span>☁️ CloudCost | クラウドコスト合同会社</span></div>
+  <div class="footer-links">
+    <a href="https://cloudcost.biz/" target="_blank" rel="noopener">公式サイト</a>
+    <a href="https://cloudcost.biz/contact" target="_blank" rel="noopener">お問い合わせ</a>
+    <a href="https://www.youtube.com/watch?v=6Azna8bjwgU" target="_blank" rel="noopener">YouTube解説</a>
+  </div>
+  <p>クラウドコスト合同会社 | 神奈川県横浜市西区浅間町1丁目 4-3 ウィザードビル 402</p>
+  <p style="margin-top:5px">代表社員：工藤 弥主子 ｜ 設立：2023年1月4日</p>
+  <p style="margin-top:14px;font-size:11px;color:rgba(255,255,255,.25)">© 2024 クラウドコスト合同会社 All rights reserved.</p>
+</footer>
+
+<script>
+  /* Header shadow */
+  const hdr = document.getElementById('site-header');
+  window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 10), {passive:true});
+
+  /* Scroll reveal */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+
+  /* FAQ */
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  }
+
+  /* Animated counters */
+  function animCount(el) {
+    const target = +el.dataset.target, suffix = el.dataset.suffix || '', t0 = performance.now();
+    const step = now => {
+      const p = Math.min((now - t0) / 1600, 1), e = 1 - Math.pow(1-p, 3);
+      el.textContent = Math.floor(e * target) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  const cio = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { animCount(e.target); cio.unobserve(e.target); } });
+  }, {threshold: 0.5});
+  document.querySelectorAll('.counter-num').forEach(el => cio.observe(el));
+</script>
+</body>
+</html>
