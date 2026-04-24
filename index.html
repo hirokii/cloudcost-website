@@ -517,29 +517,39 @@
       <div class="form-row">
         <div class="form-group">
           <label>お名前 *</label>
-          <input type="text" name="name" placeholder="山田 太郎" required>
+          <input type="text" name="name" placeholder="雲 太郎" required>
         </div>
         <div class="form-group">
           <label>会社名 *</label>
-          <input type="text" name="company" placeholder="株式会社〇〇" required>
+          <input type="text" name="company" placeholder="クラウドコスト株式会社" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>メールアドレス *</label>
-          <input type="email" name="email" placeholder="taro@example.com" required>
+          <input type="email" name="email" placeholder="cloud@cloudcost.biz" required>
         </div>
         <div class="form-group">
           <label>現在お使いのクラウド</label>
           <select name="cloud">
             <option value="">選択してください</option>
             <option value="AWS">AWS</option>
-            <option value="Google Cloud">Google Cloud（GCP）</option>
+            <option value="Google Cloud">Google Cloud Platform（GCP）</option>
             <option value="Azure">Microsoft Azure</option>
             <option value="複数">複数のクラウドを使用</option>
             <option value="その他">その他</option>
           </select>
         </div>
+      </div>
+      <div class="form-group">
+        <label>お問い合わせ内容</label>
+        <select name="inquiry-type">
+          <option value="">選択してください</option>
+          <option value="お問い合わせ">お問い合わせ</option>
+          <option value="資料請求">資料請求</option>
+          <option value="見積もり依頼">見積もり依頼</option>
+          <option value="その他">その他</option>
+        </select>
       </div>
       <div class="form-group">
         <label>月額クラウド費用（目安）</label>
@@ -548,7 +558,8 @@
           <option value="〜10万円">〜10万円</option>
           <option value="10〜50万円">10〜50万円</option>
           <option value="50〜100万円">50〜100万円</option>
-          <option value="100万円以上">100万円以上</option>
+          <option value="100〜200万円">100〜200万円</option>
+          <option value="200万円以上">200万円〜</option>
         </select>
       </div>
       <div class="form-group">
@@ -556,7 +567,7 @@
         <textarea name="message" rows="4" placeholder="ご質問・ご要望をご記入ください"></textarea>
       </div>
       <button type="submit" class="btn-submit" id="submit-btn">
-        📋 無料でお見積りを依頼する
+        お問い合わせをする
       </button>
       <div id="form-result" style="display:none;"></div>
     </form>
