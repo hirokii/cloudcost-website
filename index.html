@@ -236,6 +236,28 @@
   .btn-white:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.2);}
   .cta-note{font-size:13px;color:rgba(255,255,255,.65);margin-top:14px;}
 
+  /* ── CONTACT FORM ── */
+  .contact-form{max-width:640px;margin:32px auto 0;text-align:left;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+  .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+  .form-group label{font-size:13px;font-weight:600;color:rgba(255,255,255,.85);}
+  .form-group input,
+  .form-group select,
+  .form-group textarea{padding:11px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);color:#fff;font-size:14px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border-color .2s,background .2s;}
+  .form-group input::placeholder,
+  .form-group textarea::placeholder{color:rgba(255,255,255,.4);}
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus{border-color:var(--yellow);background:rgba(255,255,255,.18);}
+  .form-group select option{background:var(--navy);color:#fff;}
+  .btn-submit{width:100%;padding:14px;background:var(--orange);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(242,101,34,.45);transition:transform .15s,box-shadow .15s;}
+  .btn-submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(242,101,34,.5);}
+  .btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+  #form-result{margin-top:16px;padding:14px;border-radius:8px;font-size:14px;font-weight:600;text-align:center;}
+  #form-result.success{background:rgba(46,204,113,.2);border:1px solid rgba(46,204,113,.5);color:#fff;}
+  #form-result.error{background:rgba(242,101,34,.2);border:1px solid rgba(242,101,34,.5);color:#fff;}
+
   /* ── FOOTER ── */
   footer{background:var(--navy);color:rgba(255,255,255,.5);padding:44px 5vw 30px;font-size:12.5px;text-align:center;}
   .footer-logo{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;}
@@ -485,10 +507,61 @@
     <p class="section-label reveal" style="color:rgba(255,255,255,.7)">まずはここから</p>
     <h2 class="section-title reveal">AWSやGCPの請求書を送るだけで<br>具体的な削減額がわかります</h2>
     <p class="reveal" style="color:rgba(255,255,255,.75);font-size:14.5px;max-width:520px;margin:12px auto 0;">直近のクラウド請求書をご共有いただくと、コスト削減のご提案とお見積りを無料で作成します。</p>
-    <div class="cta-btns">
-      <a href="https://cloudcost.biz/contact" class="btn-white reveal" target="_blank" rel="noopener">📋 無料でお見積りを依頼する</a>
-    </div>
-    <p class="cta-note reveal">🌐 <a href="https://cloudcost.biz/" style="color:rgba(255,255,255,.75);text-decoration:underline;" target="_blank">cloudcost.biz</a>　|　<a href="https://www.youtube.com/watch?v=6Azna8bjwgU" style="color:rgba(255,255,255,.75);text-decoration:underline;" target="_blank">YouTube解説動画</a></p>
+
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form reveal" id="contact-form">
+      <input type="hidden" name="access_key" value="8c777712-614f-4fe6-813b-1e303177c6cf">
+      <input type="hidden" name="subject" value="【CloudCost】お問い合わせ">
+      <input type="hidden" name="redirect" value="false">
+      <input type="checkbox" name="botcheck" style="display:none;">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>お名前 *</label>
+          <input type="text" name="name" placeholder="山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label>会社名 *</label>
+          <input type="text" name="company" placeholder="株式会社〇〇" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>メールアドレス *</label>
+          <input type="email" name="email" placeholder="taro@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>現在お使いのクラウド</label>
+          <select name="cloud">
+            <option value="">選択してください</option>
+            <option value="AWS">AWS</option>
+            <option value="Google Cloud">Google Cloud（GCP）</option>
+            <option value="Azure">Microsoft Azure</option>
+            <option value="複数">複数のクラウドを使用</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>月額クラウド費用（目安）</label>
+        <select name="monthly_cost">
+          <option value="">選択してください</option>
+          <option value="〜10万円">〜10万円</option>
+          <option value="10〜50万円">10〜50万円</option>
+          <option value="50〜100万円">50〜100万円</option>
+          <option value="100万円以上">100万円以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>お問い合わせ内容</label>
+        <textarea name="message" rows="4" placeholder="ご質問・ご要望をご記入ください"></textarea>
+      </div>
+      <button type="submit" class="btn-submit" id="submit-btn">
+        📋 無料でお見積りを依頼する
+      </button>
+      <div id="form-result" style="display:none;"></div>
+    </form>
+
+    <p class="cta-note reveal" style="margin-top:28px;">🌐 <a href="https://cloudcost.biz/" style="color:rgba(255,255,255,.75);text-decoration:underline;" target="_blank">cloudcost.biz</a>　|　<a href="https://www.youtube.com/watch?v=6Azna8bjwgU" style="color:rgba(255,255,255,.75);text-decoration:underline;" target="_blank">YouTube解説動画</a></p>
   </div>
 </section>
 
@@ -537,6 +610,40 @@
     entries.forEach(e => { if (e.isIntersecting) { animCount(e.target); cio.unobserve(e.target); } });
   }, {threshold: 0.5});
   document.querySelectorAll('.counter-num').forEach(el => cio.observe(el));
+
+  /* Contact form */
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const result = document.getElementById('form-result');
+      btn.disabled = true;
+      btn.textContent = '送信中...';
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        const data = await res.json();
+        result.style.display = 'block';
+        if (data.success) {
+          result.className = 'success';
+          result.textContent = '✅ お問い合わせを受け付けました。2営業日以内にご連絡いたします。';
+          form.reset();
+          btn.textContent = '送信完了';
+        } else {
+          throw new Error();
+        }
+      } catch {
+        result.style.display = 'block';
+        result.className = 'error';
+        result.textContent = '❌ 送信に失敗しました。お手数ですがcloudcost.biz/contactよりご連絡ください。';
+        btn.disabled = false;
+        btn.textContent = '📋 無料でお見積りを依頼する';
+      }
+    });
+  }
 </script>
 </body>
 </html>
