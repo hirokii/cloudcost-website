@@ -640,7 +640,7 @@
         result.style.display = 'block';
         if (data.success) {
           result.className = 'success';
-          result.textContent = '✅ お問い合わせを受け付けました。2営業日以内にご連絡いたします。';
+          result.textContent = 'ありがとうございます。お問い合わせを受け付けました。2営業日以内にご連絡いたします。';
           form.reset();
           btn.textContent = '送信完了';
         } else {
@@ -649,7 +649,7 @@
       } catch {
         result.style.display = 'block';
         result.className = 'error';
-        result.textContent = '❌ 送信に失敗しました。お手数ですがcloudcost.biz/contactよりご連絡ください。';
+        result.textContent = '大変申し訳ございません。送信に失敗しました。お手数ですがinfo@cloudcost.bizにご連絡お願いいたします。';
         btn.disabled = false;
         btn.textContent = '📋 無料でお見積りを依頼する';
       }
