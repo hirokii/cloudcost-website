@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ブログ・お役立ち情報 | CloudCost（クラウドコスト合同会社）</title>
+<meta name="description" content="AWSやGCPのコスト削減に役立つ情報をCloudCostが発信。クラウド費用の削減方法・事例・最新情報を掲載しています。">
+<link rel="canonical" href="https://cloudcost.biz/blog/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cloudcost.biz/blog/">
+<meta property="og:title" content="ブログ・お役立ち情報 | CloudCost">
+<meta property="og:description" content="AWSやGCPのコスト削減に役立つ情報をCloudCostが発信しています。">
+<meta property="og:locale" content="ja_JP">
+<meta name="robots" content="index, follow">
+<meta name="author" content="クラウドコスト合同会社">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "CloudCost ブログ",
+  "url": "https://cloudcost.biz/blog/",
+  "description": "AWSやGCPのコスト削減に役立つ情報を発信するCloudCostの公式ブログ",
+  "publisher": {
+    "@type": "Organization",
+    "name": "クラウドコスト合同会社",
+    "url": "https://cloudcost.biz/"
+  }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+  :root{--sky:#1aaee5;--sky-dark:#0d8fc0;--sky-light:#e8f7fd;--navy:#1a2e4a;--orange:#f26522;--yellow:#f5c518;--gray-light:#f4f8fb;--gray:#6b7a8d;--radius:12px;--shadow:0 4px 24px rgba(26,46,74,.10);--shadow-lg:0 12px 48px rgba(26,46,74,.15);}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Noto Sans JP',sans-serif;color:var(--navy);background:#fff;line-height:1.7;font-size:15px;overflow-x:hidden;}
+
+  /* ── HEADER ── */
+  header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:2px solid var(--sky-light);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px;transition:box-shadow .3s;}
+  header.scrolled{box-shadow:0 4px 20px rgba(26,46,74,.1);}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-icon{width:38px;height:38px;background:var(--sky);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+  .logo-text{font-family:'Montserrat',sans-serif;font-weight:900;font-size:20px;color:var(--navy);}
+  .logo-sub{font-size:10px;color:var(--sky);font-weight:600;display:block;line-height:1.2;}
+  nav a{text-decoration:none;color:var(--navy);font-weight:500;font-size:13px;margin-left:28px;transition:color .2s;position:relative;}
+  nav a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--sky);transform:scaleX(0);transition:transform .2s;}
+  nav a:hover::after{transform:scaleX(1);}
+  nav a:hover{color:var(--sky);}
+  .btn-nav{background:var(--sky);color:#fff!important;padding:8px 20px;border-radius:6px;font-weight:700!important;transition:background .2s,transform .15s;}
+  .btn-nav::after{display:none!important;}
+  .btn-nav:hover{background:var(--sky-dark)!important;transform:translateY(-1px);}
+
+  /* ── PAGE HERO ── */
+  .page-hero{background:linear-gradient(135deg,#1aaee5 0%,#0d6eb5 55%,#1a2e4a 100%);padding:60px 5vw 68px;color:#fff;text-align:center;position:relative;overflow:hidden;}
+  .page-hero-blob{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);animation:blobFloat 8s ease-in-out infinite;}
+  .page-hero-blob.b1{width:400px;height:400px;top:-100px;right:-60px;}
+  .page-hero-blob.b2{width:260px;height:260px;bottom:-60px;left:-40px;animation-delay:-3s;}
+  @keyframes blobFloat{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-20px) scale(1.04);}}
+  .page-hero-inner{max-width:700px;margin:0 auto;position:relative;z-index:1;}
+  .page-hero-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:12px;}
+  .page-hero h1{font-weight:900;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.25;margin-bottom:14px;}
+  .page-hero p{font-size:15px;color:rgba(255,255,255,.8);max-width:520px;margin:0 auto;}
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb{background:var(--gray-light);padding:12px 5vw;font-size:12px;color:var(--gray);}
+  .breadcrumb a{color:var(--sky);text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+  .breadcrumb span{margin:0 6px;opacity:.5;}
+
+  /* ── BLOG LAYOUT ── */
+  .blog-section{padding:60px 5vw;}
+  .blog-inner{max-width:1000px;margin:0 auto;}
+
+  /* ── SERVICE BANNER ── */
+  .service-banner{background:var(--sky-light);border:1px solid rgba(26,174,229,.2);border-radius:var(--radius);padding:14px 20px;margin-bottom:32px;font-size:13.5px;color:var(--navy);line-height:1.6;}
+  .service-banner a{color:var(--sky);font-weight:700;text-decoration:none;margin-left:6px;}
+  .service-banner a:hover{text-decoration:underline;}
+
+  /* ── FILTERS ── */
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;align-items:center;}
+  .filter-label{font-size:12px;font-weight:700;color:var(--gray);letter-spacing:.5px;text-transform:uppercase;margin-right:4px;}
+  .filter-btn{padding:6px 16px;border-radius:100px;font-size:12px;font-weight:600;border:1.5px solid #e2eaf2;background:#fff;color:var(--navy);cursor:pointer;transition:all .2s;font-family:'Noto Sans JP',sans-serif;}
+  .filter-btn:hover,.filter-btn.active{background:var(--sky);border-color:var(--sky);color:#fff;}
+
+  /* ── POST GRID ── */
+  .post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;}
+  .post-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column;}
+  .post-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+  .post-card-img{height:180px;background:linear-gradient(135deg,var(--sky-light),#d4edf8);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+  .post-card-img img{width:100%;height:100%;object-fit:cover;}
+  .post-card-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#e8f7fd 0%,#c8e8f5 100%);display:flex;align-items:center;justify-content:center;}
+  .post-card-img-icon{opacity:.25;}
+  .post-tag{position:absolute;top:14px;left:14px;background:var(--sky);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:.3px;}
+  .post-card-body{padding:22px 22px 18px;display:flex;flex-direction:column;flex:1;}
+  .post-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:12px;color:var(--gray);}
+  .post-date{display:flex;align-items:center;gap:4px;}
+  .post-read-time{display:flex;align-items:center;gap:4px;}
+  .post-meta-dot{width:3px;height:3px;border-radius:50%;background:var(--gray);opacity:.4;}
+  .post-card h2{font-weight:700;font-size:15px;line-height:1.5;color:var(--navy);margin-bottom:10px;}
+  .post-card h2 a{text-decoration:none;color:inherit;}
+  .post-card h2 a:hover{color:var(--sky);}
+  .post-excerpt{font-size:13px;color:var(--gray);line-height:1.7;flex:1;margin-bottom:16px;}
+  .post-read-more{font-size:13px;font-weight:700;color:var(--sky);text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap .2s;}
+  .post-read-more:hover{gap:8px;}
+
+  /* ── FEATURED POST ── */
+  .post-featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform .22s,box-shadow .22s;}
+  .post-featured:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+  .post-featured .post-card-img{height:100%;min-height:240px;}
+  .post-featured .post-card-body{padding:32px 32px 28px;}
+  .post-featured .post-card h2{font-size:20px;}
+  .post-featured-badge{display:inline-block;background:var(--yellow);color:var(--navy);font-size:10px;font-weight:900;padding:3px 10px;border-radius:100px;letter-spacing:.5px;margin-bottom:12px;}
+  @media(max-width:680px){
+    .post-featured{grid-template-columns:1fr;}
+    .post-featured .post-card-img{height:200px;}
+  }
+
+  /* ── EMPTY STATE ── */
+  .empty-state{text-align:center;padding:80px 20px;color:var(--gray);}
+  .empty-state p{font-size:15px;margin-top:12px;}
+
+  /* ── PAGINATION ── */
+  .pagination{display:flex;justify-content:center;gap:8px;margin-top:48px;}
+  .page-btn{width:40px;height:40px;border-radius:8px;border:1.5px solid #e2eaf2;background:#fff;color:var(--navy);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Noto Sans JP',sans-serif;display:flex;align-items:center;justify-content:center;}
+  .page-btn:hover,.page-btn.active{background:var(--sky);border-color:var(--sky);color:#fff;}
+
+  /* ── CTA STRIP ── */
+  .cta-strip{background:linear-gradient(135deg,#1aaee5 0%,#0d5fa8 100%);padding:56px 5vw;text-align:center;color:#fff;position:relative;overflow:hidden;}
+  .cta-strip::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
+  .cta-strip-inner{max-width:600px;margin:0 auto;position:relative;z-index:1;}
+  .cta-strip h2{font-weight:900;font-size:clamp(1.4rem,3vw,2rem);margin-bottom:10px;}
+  .cta-strip p{color:rgba(255,255,255,.8);font-size:14.5px;margin-bottom:28px;}
+  .btn-white{background:#fff;color:var(--sky);padding:13px 32px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .15s,box-shadow .15s;}
+  .btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.2);}
+
+  /* ── FOOTER ── */
+  footer{background:var(--navy);color:rgba(255,255,255,.5);padding:44px 5vw 30px;font-size:12.5px;text-align:center;}
+  .footer-logo{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;}
+  .footer-logo span{color:#fff;font-weight:700;font-size:15px;}
+  .footer-links{display:flex;gap:20px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+  footer a{color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+  footer a:hover{color:var(--sky);}
+
+  /* ── REVEAL ── */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.68,0,1.1);}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  @media(max-width:600px){
+    header nav{display:none;}
+    .post-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="site-header">
+  <a href="/" class="logo">
+    <div class="logo-icon">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 6.5C17.5 6.5 17.5 6.4 17.5 6.3C17.5 3.4 15.1 1 12.2 1C10.1 1 8.3 2.2 7.4 4C7 3.8 6.5 3.7 6 3.7C4.1 3.7 2.5 5.3 2.5 7.2C2.5 7.3 2.5 7.4 2.5 7.5C1.4 8 0.5 9.1 0.5 10.4C0.5 12.2 2 13.7 3.8 13.7H17.2C19.3 13.7 21 12 21 9.9C21 8.3 20 6.9 17.5 6.5Z" stroke="white" stroke-width="1.5" stroke-linejoin="round" fill="none"/></svg>
+    </div>
+    <div>
+      <span class="logo-text">CloudCost</span>
+      <span class="logo-sub">クラウドを安く、簡単に</span>
+    </div>
+  </a>
+  <nav>
+    <a href="/#reasons">削減の仕組み</a>
+    <a href="/#flow">ご利用の流れ</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/#contact" class="btn-nav">無料見積り →</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-blob b1"></div>
+  <div class="page-hero-blob b2"></div>
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Knowledge Base</p>
+    <h1>クラウドコスト削減<br>お役立ち情報</h1>
+    <p>AWS・GCPの料金削減に役立つ最新情報、事例、ノウハウをお届けします。</p>
+    <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.6);">
+      CloudCostのサービスについては
+      <a href="/" style="color:var(--yellow);text-decoration:underline;font-weight:700;">こちらのサービスページ</a>
+      をご覧ください。
+    </p>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <a href="/">ホーム</a>
+  <span>›</span>
+  ブログ
+</nav>
+
+<!-- BLOG LISTING -->
+<section class="blog-section">
+  <div class="blog-inner">
+
+    <!-- CATEGORY FILTER -->
+    <div class="filter-bar reveal">
+      <span class="filter-label">カテゴリ:</span>
+      <button class="filter-btn active" onclick="filterPosts('all', this)">すべて</button>
+      <button class="filter-btn" onclick="filterPosts('aws', this)">AWS</button>
+      <button class="filter-btn" onclick="filterPosts('gcp', this)">Google Cloud</button>
+      <button class="filter-btn" onclick="filterPosts('cost', this)">コスト削減</button>
+      <button class="filter-btn" onclick="filterPosts('case', this)">導入事例</button>
+      <button class="filter-btn" onclick="filterPosts('news', this)">お知らせ</button>
+    </div>
+
+    <!-- SERVICE INTRO BANNER -->
+    <div class="service-banner reveal">
+      <div class="service-banner-text">
+        <strong>CloudCostについて：</strong>支払先を変更するだけでAWS・GCPの料金を最大11%削減できるサービスです。管理者権限の提供不要・不要サービスのバンドルなし。
+        <a href="/">サービスの詳細・無料見積りはこちら →</a>
+      </div>
+    </div>
+
+    <!-- POST GRID — populated by JS from posts registry -->
+    <div class="post-grid" id="post-grid">
+      <!-- Posts are injected here by the script below -->
+    </div>
+
+    <div class="empty-state" id="empty-state" style="display:none;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <p>このカテゴリの記事は準備中です。</p>
+    </div>
+
+    <div class="pagination" id="pagination"></div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <h2>AWSやGCPの料金、<br>削減できるか確認しませんか？</h2>
+    <p>直近の請求書をご共有いただくだけで、無料でお見積りを作成します。<br>管理者権限の提供不要・最短1週間で割引開始。</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:4px;">
+      <a href="/#contact" class="btn-white">
+        <img src="/images/icons/icon-clipboard.svg" alt="" width="16" height="16" style="filter:invert(51%) sepia(97%) saturate(413%) hue-rotate(163deg) brightness(96%) contrast(90%);">
+        無料でお見積りを依頼する
+      </a>
+      <a href="/" style="color:rgba(255,255,255,.85);font-size:14px;font-weight:600;text-decoration:underline;display:flex;align-items:center;">サービス内容を見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <div style="width:38px;height:38px;background:var(--sky);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 6.5C17.5 6.5 17.5 6.4 17.5 6.3C17.5 3.4 15.1 1 12.2 1C10.1 1 8.3 2.2 7.4 4C7 3.8 6.5 3.7 6 3.7C4.1 3.7 2.5 5.3 2.5 7.2C2.5 7.3 2.5 7.4 2.5 7.5C1.4 8 0.5 9.1 0.5 10.4C0.5 12.2 2 13.7 3.8 13.7H17.2C19.3 13.7 21 12 21 9.9C21 8.3 20 6.9 17.5 6.5Z" stroke="white" stroke-width="1.5" stroke-linejoin="round" fill="none"/></svg>
+    </div>
+    <span>CloudCost | クラウドコスト合同会社</span>
+  </div>
+  <div class="footer-links">
+    <a href="/" >ホーム</a>
+    <a href="/#reasons">サービス内容</a>
+    <a href="/#flow">ご利用の流れ</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/#contact">お問い合わせ</a>
+    <a href="https://www.youtube.com/watch?v=6Azna8bjwgU" target="_blank" rel="noopener">YouTube</a>
+  </div>
+  <p>クラウドコスト合同会社 | 神奈川県横浜市西区浅間町1丁目 4-3</p>
+  <p style="margin-top:14px;font-size:11px;color:rgba(255,255,255,.25)">© 2024 クラウドコスト合同会社 All rights reserved.</p>
+</footer>
+
+<script>
+  /* ── Header shadow ── */
+  const hdr = document.getElementById('site-header');
+  window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 10), {passive:true});
+
+  /* ── Scroll reveal ── */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ══════════════════════════════════════════════
+     POSTS REGISTRY
+     To add a new post: add one object to this array.
+     Fields:
+       slug     — filename without .html  e.g. "aws-cost-reduction-guide"
+       title    — post title (Japanese OK)
+       date     — "YYYY-MM-DD"
+       category — "aws" | "gcp" | "cost" | "case" | "news"
+       excerpt  — 1–2 sentence summary shown on the card
+       readTime — estimated read time in minutes
+       featured — true for the first/hero post (optional)
+  ══════════════════════════════════════════════ */
+  const posts = [
+    {
+      slug: "aws-cost-reduction-guide",
+      title: "AWSのコストを削減する5つの方法【2025年版】",
+      date: "2025-04-01",
+      category: "aws",
+      excerpt: "AWSの利用料金を下げるための具体的な5つの方法を解説します。支払先変更から使用量最適化まで、すぐに実践できる手順を紹介。",
+      readTime: 6,
+      featured: true
+    }
+    /* ── ADD MORE POSTS HERE ──
+    ,{
+      slug: "gcp-vs-aws-cost-comparison",
+      title: "GCPとAWSのコスト比較：どちらが安いか？",
+      date: "2025-04-10",
+      category: "gcp",
+      excerpt: "Google CloudとAWSの料金体系を徹底比較。ワークロード別にどちらがコスト効率が高いかを解説します。",
+      readTime: 8
+    }
+    */
+  ];
+
+  /* ── Render helpers ── */
+  const CATEGORY_LABELS = {aws:'AWS', gcp:'Google Cloud', cost:'コスト削減', case:'導入事例', news:'お知らせ'};
+
+  function formatDate(d) {
+    const [y,m,day] = d.split('-');
+    return `${y}年${parseInt(m)}月${parseInt(day)}日`;
+  }
+
+  function buildCard(post, featured=false) {
+    const tag = CATEGORY_LABELS[post.category] || post.category;
+    if (featured) {
+      return `
+        <article class="post-card post-featured" data-category="${post.category}">
+          <div class="post-card-img">
+            <div class="post-card-img-placeholder">
+              <svg class="post-card-img-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1aaee5" stroke-width="1.2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <span class="post-tag">${tag}</span>
+          </div>
+          <div class="post-card-body">
+            <span class="post-featured-badge">注目記事</span>
+            <div class="post-meta">
+              <span class="post-date">${formatDate(post.date)}</span>
+              <span class="post-meta-dot"></span>
+              <span class="post-read-time">読了 ${post.readTime}分</span>
+            </div>
+            <h2><a href="/blog/${post.slug}.html">${post.title}</a></h2>
+            <p class="post-excerpt">${post.excerpt}</p>
+            <a href="/blog/${post.slug}.html" class="post-read-more">続きを読む →</a>
+          </div>
+        </article>`;
+    }
+    return `
+      <article class="post-card" data-category="${post.category}">
+        <div class="post-card-img">
+          <div class="post-card-img-placeholder">
+            <svg class="post-card-img-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1aaee5" stroke-width="1.2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          </div>
+          <span class="post-tag">${tag}</span>
+        </div>
+        <div class="post-card-body">
+          <div class="post-meta">
+            <span class="post-date">${formatDate(post.date)}</span>
+            <span class="post-meta-dot"></span>
+            <span class="post-read-time">読了 ${post.readTime}分</span>
+          </div>
+          <h2><a href="/blog/${post.slug}.html">${post.title}</a></h2>
+          <p class="post-excerpt">${post.excerpt}</p>
+          <a href="/blog/${post.slug}.html" class="post-read-more">続きを読む →</a>
+        </div>
+      </article>`;
+  }
+
+  /* ── Initial render ── */
+  function renderPosts(filtered) {
+    const grid = document.getElementById('post-grid');
+    const empty = document.getElementById('empty-state');
+    if (!filtered.length) {
+      grid.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+    grid.innerHTML = filtered.map((p, i) => buildCard(p, i === 0 && p.featured)).join('');
+  }
+
+  renderPosts(posts);
+
+  /* ── Filter ── */
+  function filterPosts(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filtered = cat === 'all' ? posts : posts.filter(p => p.category === cat);
+    renderPosts(filtered);
+  }
+</script>
+</body>
+</html>
