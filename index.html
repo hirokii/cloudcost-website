@@ -165,7 +165,7 @@
   .value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:18px;margin-top:16px;}
   .value-card{background:#fff;border-radius:var(--radius);padding:28px 18px 22px;text-align:center;box-shadow:var(--shadow);border-top:4px solid var(--sky);transition:transform .22s,box-shadow .22s;}
   .value-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
-  .value-icon{font-size:2rem;margin-bottom:12px;}
+  .value-icon{font-size:2rem;margin-bottom:12px;display:flex;align-items:center;justify-content:center;height:44px;}
   .value-card h3{font-weight:700;font-size:13px;color:var(--navy);line-height:1.5;}
 
   /* ── REASONS ── */
@@ -186,7 +186,7 @@
   @media(max-width:700px){.strength-grid{grid-template-columns:1fr;}}
   .strength-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:var(--radius);padding:26px 20px;color:#fff;transition:background .2s,transform .2s;}
   .strength-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px);}
-  .strength-icon{font-size:1.7rem;margin-bottom:12px;}
+  .strength-icon{font-size:1.7rem;margin-bottom:12px;display:flex;align-items:center;height:40px;}
   .strength-card h3{font-weight:700;font-size:14px;margin-bottom:8px;}
   .strength-card p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;}
 
@@ -278,9 +278,7 @@
 <!-- HEADER -->
 <header id="site-header">
   <a href="https://cloudcost.biz/" class="logo">
-    <div class="value-icon">
-    <div class="logo-icon" style="background:var(--sky);border-radius:8px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 6.5C17.5 6.5 17.5 6.4 17.5 6.3C17.5 3.4 15.1 1 12.2 1C10.1 1 8.3 2.2 7.4 4C7 3.8 6.5 3.7 6 3.7C4.1 3.7 2.5 5.3 2.5 7.2C2.5 7.3 2.5 7.4 2.5 7.5C1.4 8 0.5 9.1 0.5 10.4C0.5 12.2 2 13.7 3.8 13.7H17.2C19.3 13.7 21 12 21 9.9C21 8.3 20 6.9 17.5 6.5Z" stroke="white" stroke-width="1.5" stroke-linejoin="round" fill="none"/></svg></div>
-</div>
+    <div class="logo-icon"><svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 6.5C17.5 6.5 17.5 6.4 17.5 6.3C17.5 3.4 15.1 1 12.2 1C10.1 1 8.3 2.2 7.4 4C7 3.8 6.5 3.7 6 3.7C4.1 3.7 2.5 5.3 2.5 7.2C2.5 7.3 2.5 7.4 2.5 7.5C1.4 8 0.5 9.1 0.5 10.4C0.5 12.2 2 13.7 3.8 13.7H17.2C19.3 13.7 21 12 21 9.9C21 8.3 20 6.9 17.5 6.5Z" stroke="white" stroke-width="1.5" stroke-linejoin="round" fill="none"/></svg></div>
     <div>
       <span class="logo-text">CloudCost</span>
       <span class="logo-sub">クラウドを安く、簡単に</span>
@@ -301,7 +299,7 @@
   <div class="hero-blob b3"></div>
   <div class="hero-inner">
     <div class="hero-badge">
-      🏅 <span class="hl">神奈川県「セレクト神奈川 NEXT」認定企業</span>
+      <img src="/images/icons/icon-award.svg" alt="" width="14" height="14" style="filter:brightness(0) invert(1);opacity:.9;"> <span class="hl">神奈川県「セレクト神奈川 NEXT」認定企業</span>
     </div>
     <h1>AWS・GCPの料金を<br><em>最大 11% 削減</em>できます</h1>
     <p class="lead">支払先をCloudCostに変更するだけ。管理者権限の提供不要・不要サービスのバンドルなし。グローバル専門家チームがコスト最適化をサポートします。</p>
@@ -312,7 +310,7 @@
       <span class="lbl">OFF（サービス料込み）</span>
     </div>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">📋 無料でお見積りを依頼する</a>
+      <a href="#contact" class="btn-primary"><img src="/images/icons/icon-clipboard.svg" alt="" width="16" height="16" style="filter:brightness(0) invert(1);"> 無料でお見積りを依頼する</a>
       <a href="#flow" class="btn-ghost">ご利用の流れを見る →</a>
     </div>
   </div>
@@ -373,12 +371,12 @@
     <h2 class="section-title reveal">クラウドをもっとお得に、<br>もっとシンプルに</h2>
     <div class="divider reveal"></div>
     <div class="value-grid">
-      <article class="value-card reveal d1"><div class="value-icon">💰</div><h3>最大 11% 割引<br>（サービス料込み）</h3></article>
-      <article class="value-card reveal d2"><div class="value-icon">🔄</div><h3>他ベンダー移行で<br>最大 20% 割引</h3></article>
-      <article class="value-card reveal d3"><div class="value-icon">📊</div><h3>データ消費の分析・<br>最適化でさらに削減</h3></article>
-      <article class="value-card reveal d4"><div class="value-icon">🔒</div><h3>管理者権限の<br>提供不要</h3></article>
-      <article class="value-card reveal d5"><div class="value-icon">🌏</div><h3>5カ国以上の<br>グローバル対応</h3></article>
-      <article class="value-card reveal d5"><div class="value-icon">🤝</div><h3>不要サービスとの<br>バンドルなし</h3></article>
+      <article class="value-card reveal d1"><div class="value-icon"><img src="/images/icons/icon-tag.svg" alt="" width="36" height="36" style="color:var(--sky);filter:invert(51%) sepia(97%) saturate(413%) hue-rotate(163deg) brightness(96%) contrast(90%);"></div><h3>最大 11% 割引<br>（サービス料込み）</h3></article>
+      <article class="value-card reveal d2"><div class="value-icon"><img src="/images/icons/icon-refresh.svg" alt="" width="36" height="36" style="filter:invert(51%) sepia(97%) saturate(413%) hue-rotate(163deg) brightness(96%) contrast(90%);"></div><h3>他ベンダー移行で<br>最大 20% 割引</h3></article>
+      <article class="value-card reveal d3"><div class="value-icon"><img src="/images/icons/icon-chart.svg" alt="" width="36" height="36" style="filter:invert(51%) sepia(97%) saturate(413%) hue-rotate(163deg) brightness(96%) contrast(90%);"></div><h3>データ消費の分析・<br>最適化でさらに削減</h3></article>
+      <article class="value-card reveal d4"><div class="value-icon"><img src="/images/icons/icon-lock.svg" alt="" width="36" height="36" style="filter:invert(51%) sepia(97%) saturate(413%) hue-rotate(163deg) brightness(96%) contrast(90%);"></div><h3>管理者権限の<br>提供不要</h3></article>
+      <article class="value-card reveal d5"><div class="value-icon"><img src="/images/icons/icon-globe.svg" alt="" width="36" height="36" style="filter:invert(51%) sepia(97%) saturate(413%) hue-rotate(163deg) brightness(96%) contrast(90%);"></div><h3>5カ国以上の<br>グローバル対応</h3></article>
+      <article class="value-card reveal d5"><div class="value-icon"><img src="/images/icons/icon-handshake.svg" alt="" width="36" height="36" style="filter:invert(51%) sepia(97%) saturate(413%) hue-rotate(163deg) brightness(96%) contrast(90%);"></div><h3>不要サービスとの<br>バンドルなし</h3></article>
     </div>
   </div>
 </section>
@@ -422,12 +420,12 @@
     <h2 class="section-title reveal">CloudCost の強み</h2>
     <div class="divider reveal"></div>
     <div class="strength-grid">
-      <article class="strength-card reveal d1"><div class="strength-icon">🏆</div><h3>業界最大の割引率（最大〜10%）</h3><p>海外から仕入れているため、国内の一般的な代理店では実現できない高い割引率を提供します。</p></article>
-      <article class="strength-card reveal d2"><div class="strength-icon">🔐</div><h3>管理者権限の提供不要</h3><p>ルート権限・管理者権限をお渡しいただかなくても割引が適用されます。安全にご利用いただけます。</p></article>
-      <article class="strength-card reveal d3"><div class="strength-icon">🚫</div><h3>不要サービスのバンドルなし</h3><p>必要なサービスだけをシンプルに提供。不要なオプションの押し付けは一切行いません。</p></article>
-      <article class="strength-card reveal d1"><div class="strength-icon">🌐</div><h3>5カ国以上でグローバル展開</h3><p>日本・香港をはじめ5カ国以上でサービスを展開。グローバルな専門家チームが対応します。</p></article>
-      <article class="strength-card reveal d2"><div class="strength-icon">☁️</div><h3>全主要クラウドベンダーに対応</h3><p>AWS・GCPはもちろん、Alibaba Cloud・Huawei Cloud・Cloudflareなど幅広く対応。</p></article>
-      <article class="strength-card reveal d3"><div class="strength-icon">🏅</div><h3>公認・認定企業</h3><p>神奈川県「セレクト神奈川 NEXT」認定企業。AWSとの直接パートナーシップも締結済み。</p></article>
+      <article class="strength-card reveal d1"><div class="strength-icon"><img src="/images/icons/icon-trophy.svg" alt="" width="32" height="32" style="filter:brightness(0) invert(1);"></div><h3>業界最大の割引率（最大〜10%）</h3><p>海外から仕入れているため、国内の一般的な代理店では実現できない高い割引率を提供します。</p></article>
+      <article class="strength-card reveal d2"><div class="strength-icon"><img src="/images/icons/icon-shield.svg" alt="" width="32" height="32" style="filter:brightness(0) invert(1);"></div><h3>管理者権限の提供不要</h3><p>ルート権限・管理者権限をお渡しいただかなくても割引が適用されます。安全にご利用いただけます。</p></article>
+      <article class="strength-card reveal d3"><div class="strength-icon"><img src="/images/icons/icon-slash.svg" alt="" width="32" height="32" style="filter:brightness(0) invert(1);"></div><h3>不要サービスのバンドルなし</h3><p>必要なサービスだけをシンプルに提供。不要なオプションの押し付けは一切行いません。</p></article>
+      <article class="strength-card reveal d1"><div class="strength-icon"><img src="/images/icons/icon-globe.svg" alt="" width="32" height="32" style="filter:brightness(0) invert(1);"></div><h3>5カ国以上でグローバル展開</h3><p>日本・香港をはじめ5カ国以上でサービスを展開。グローバルな専門家チームが対応します。</p></article>
+      <article class="strength-card reveal d2"><div class="strength-icon"><img src="/images/icons/icon-cloud.svg" alt="" width="32" height="32" style="filter:brightness(0) invert(1);"></div><h3>全主要クラウドベンダーに対応</h3><p>AWS・GCPはもちろん、Alibaba Cloud・Huawei Cloud・Cloudflareなど幅広く対応。</p></article>
+      <article class="strength-card reveal d3"><div class="strength-icon"><img src="/images/icons/icon-award.svg" alt="" width="32" height="32" style="filter:brightness(0) invert(1);"></div><h3>公認・認定企業</h3><p>神奈川県「セレクト神奈川 NEXT」認定企業。AWSとの直接パートナーシップも締結済み。</p></article>
     </div>
   </div>
 </section>
@@ -574,13 +572,13 @@
       <div id="form-result" style="display:none;"></div>
     </form>
 
-    <p class="cta-note reveal" style="margin-top:28px;">🌐 <a href="https://cloudcost.biz/" style="color:rgba(255,255,255,.75);text-decoration:underline;" target="_blank">cloudcost.biz</a>　|　<a href="https://www.youtube.com/watch?v=6Azna8bjwgU" style="color:rgba(255,255,255,.75);text-decoration:underline;" target="_blank">YouTube解説動画</a></p>
+    <p class="cta-note reveal" style="margin-top:28px;"><img src="/images/icons/icon-globe.svg" alt="" width="14" height="14" style="filter:brightness(0) invert(1);opacity:.7;vertical-align:middle;"> <a href="https://cloudcost.biz/" style="color:rgba(255,255,255,.75);text-decoration:underline;" target="_blank">cloudcost.biz</a>　|　<a href="https://www.youtube.com/watch?v=6Azna8bjwgU" style="color:rgba(255,255,255,.75);text-decoration:underline;" target="_blank">YouTube解説動画</a></p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><span>☁️ CloudCost | クラウドコスト合同会社</span></div>
+  <div class="footer-logo"><span><img src="/images/icons/icon-cloud.svg" alt="" width="18" height="18" style="filter:brightness(0) invert(1);opacity:.8;vertical-align:middle;margin-right:6px;">CloudCost | クラウドコスト合同会社</span></div>
   <div class="footer-links">
     <a href="https://cloudcost.biz/" target="_blank" rel="noopener">公式サイト</a>
     <a href="https://cloudcost.biz/contact" target="_blank" rel="noopener">お問い合わせ</a>
@@ -653,7 +651,7 @@
         result.className = 'error';
         result.textContent = '大変申し訳ございません。送信に失敗しました。お手数ですがinfo@cloudcost.bizにご連絡お願いいたします。';
         btn.disabled = false;
-        btn.textContent = '📋 無料でお見積りを依頼する';
+        btn.textContent = '無料でお見積りを依頼する';
       }
     });
   }
